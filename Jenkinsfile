@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build image') {
             steps {
-                sh 'docker build -f app/ -t $REGISTRY/$IMAGE:$BUILD_NUMBER -t $REGISTRY/$IMAGE:latest .'
+                sh 'docker build -f app/Dockerfile -t $REGISTRY/$IMAGE:$BUILD_NUMBER -t $REGISTRY/$IMAGE:latest .'
             }
         }
         stage('Push image') {
