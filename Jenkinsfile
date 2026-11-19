@@ -10,7 +10,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'sonar-scanner'
                     withSonarQubeEnv('sonarcloud') {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.organization=iam-animasaun -Dsonar.projectKey=YOUR_TODO_PROJECT_KEY -Dsonar.sources=. -Dsonar.host.url=\$SONAR_HOST_URL -Dsonar.token=\$SONAR_AUTH_TOKEN"
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.organization=iam-animasaun -Dsonar.projectKey=iam-animasaun_ansible-config -Dsonar.sources=. -Dsonar.host.url=\$SONAR_HOST_URL -Dsonar.token=\$SONAR_AUTH_TOKEN"
                     }
                 }
             }
