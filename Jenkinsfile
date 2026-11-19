@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('Build image') {
             steps {
-                sh 'docker build -f app/Dockerfile -t $REGISTRY/$IMAGE1:$BUILD_NUMBER -t $REGISTRY/$IMAGE:latest app/'
-                sh 'docker build -f app/backend/Dockerfile -t $REGISTRY/$IMAGE2:$BUILD_NUMBER -t $REGISTRY/$IMAGE:latest app/backend/'
+                sh 'docker build -f app/Dockerfile -t $REGISTRY/$IMAGE1:$BUILD_NUMBER -t $REGISTRY/$IMAGE1:latest app/'
+                sh 'docker build -f app/backend/Dockerfile -t $REGISTRY/$IMAGE2:$BUILD_NUMBER -t $REGISTRY/$IMAGE2:latest app/backend/'
             }
         }
         stage('Push image') {
